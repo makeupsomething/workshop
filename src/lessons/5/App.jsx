@@ -14,14 +14,14 @@ import ToastContainer from '../../common/Toasts/ToastContainer';
 
 const FinishedApp = () => {
 	const [showSidebar, setShowsidebar] = React.useState(true);
-	const messageDisplayRef = React.useRef();
-	const takescreenshot = () => messageDisplayRef.current.takescreenshot();
+	const mapRef = React.useRef();
+	const takescreenshot = () => mapRef.current.takescreenshot();
 
 	return (
 		<LocationsProvider>
 			<ToastProvider>
 				<Header setShowsidebar={setShowsidebar} />
-				<Map ref={messageDisplayRef}>
+				<Map ref={mapRef}>
 					<Markers />
 				</Map>
 				<Sidebar showSidebar={showSidebar}>
