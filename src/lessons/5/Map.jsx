@@ -62,6 +62,8 @@ const Map = React.forwardRef(function MessagesDisplay(props, ref) {
 		}
 	}
 
+	// Add the takescrrenshot function to the map ref
+	// https://reactjs.org/docs/hooks-reference.html#useimperativehandle
 	React.useImperativeHandle(ref, () => ({
 		takescreenshot,
 	}));

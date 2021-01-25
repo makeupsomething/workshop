@@ -21,8 +21,11 @@ export const Menu = ({ children }) => {
 	const [open, setOpen] = React.useState(true);
 	const toggle = () => setOpen(!open);
 
+	//Portals provide a first-class way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.
+	// https://reactjs.org/docs/portals.html
 	return createPortal(
 		<MenuWrapper>
+			{/* https://reactjs.org/docs/react-api.html#reactchildren */}
 			{React.Children.map(children, (child) =>
 				React.cloneElement(child, { open, toggle }),
 			)}
