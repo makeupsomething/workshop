@@ -6,10 +6,28 @@ import { App as Three } from './lessons/3';
 import { App as Four } from './lessons/4';
 import { App as Five } from './lessons/5';
 import { App as FinishedApp } from './finished';
+import styled from 'styled-components';
+
+const LessonList = styled.ul`
+	list-style: none;
+
+	li::before {
+		content: '✅';
+		display: inline-block;
+		margin-right: 0.2rem;
+	}
+
+	li {
+		a {
+			color: white;
+			text-decoration: none;
+		}
+	}
+`;
 
 const Home = () => {
 	return (
-		<ul>
+		<LessonList>
 			<li>
 				<Link to="/">Home</Link>
 			</li>
@@ -31,7 +49,7 @@ const Home = () => {
 			<li>
 				<Link to="/finished">Finished App</Link>
 			</li>
-		</ul>
+		</LessonList>
 	);
 };
 

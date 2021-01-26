@@ -23,7 +23,6 @@ function useLocalStorageState(
 
 	const prevKeyRef = useRef(key);
 
-	// Check the example at src/examples/local-state-key-change.js to visualize a key change
 	useEffect(() => {
 		const prevKey = prevKeyRef.current;
 		if (prevKey !== key) {
