@@ -8,48 +8,72 @@ import { App as Five } from './lessons/5';
 import { App as FinishedApp } from './finished';
 import styled from 'styled-components';
 
+const HomeWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	margin: 1rem;
+`;
+
 const LessonList = styled.ul`
+	padding: 0px;
 	list-style: none;
 
 	li::before {
-		content: '✅';
+		content: '🚀';
 		display: inline-block;
 		margin-right: 0.2rem;
 	}
 
 	li {
+		margin-top: 8px;
 		a {
 			color: white;
 			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 `;
 
 const Home = () => {
 	return (
-		<LessonList>
-			<li>
-				<Link to="/">Home</Link>
-			</li>
-			<li>
-				<Link to="/1">Lesson 1</Link>
-			</li>
-			<li>
-				<Link to="/2">Lesson 2</Link>
-			</li>
-			<li>
-				<Link to="/3">Lesson 3</Link>
-			</li>
-			<li>
-				<Link to="/4">Lesson 4</Link>
-			</li>
-			<li>
-				<Link to="/5">Lesson 5</Link>
-			</li>
-			<li>
-				<Link to="/finished">Finished App</Link>
-			</li>
-		</LessonList>
+		<HomeWrapper>
+			<h1 style={{ color: 'white' }}>Welcome!</h1>
+			<p style={{ color: 'white' }}>
+				Click on a lesson or the finished app to see what we will be
+				building.
+			</p>
+			<p style={{ color: 'white' }}>
+				If you cannot see a map when you click a link make sure you have
+				the Mapbox enviroment variable set in your <code>.env</code>{' '}
+				file.
+			</p>
+			<LessonList>
+				<li>
+					<Link to="/">Home (this page)</Link>
+				</li>
+				<li>
+					<Link to="/1">Lesson 1</Link>
+				</li>
+				<li>
+					<Link to="/2">Lesson 2</Link>
+				</li>
+				<li>
+					<Link to="/3">Lesson 3</Link>
+				</li>
+				<li>
+					<Link to="/4">Lesson 4</Link>
+				</li>
+				<li>
+					<Link to="/5">Lesson 5</Link>
+				</li>
+				<li>
+					<Link to="/finished">Finished App</Link>
+				</li>
+			</LessonList>
+		</HomeWrapper>
 	);
 };
 
